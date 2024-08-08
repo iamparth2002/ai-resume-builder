@@ -25,7 +25,6 @@ import { toast } from 'sonner'
 
 function ResumeCardItem({resume,refreshData}) {
   
-  console.log({resume})
   const navigation=useNavigate();
   const [openAlert,setOpenAlert]=useState(false);
   const [loading,setLoading]=useState(false);
@@ -37,7 +36,6 @@ function ResumeCardItem({resume,refreshData}) {
   const onDelete=()=>{
     setLoading(true);
     GlobalApi.DeleteResumeById(resume.id).then(resp=>{
-      console.log(resp);
       toast('Resume Deleted!');
       refreshData()
       setLoading(false);
